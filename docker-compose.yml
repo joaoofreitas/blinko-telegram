@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  blinko-telegram-bot:
+    build: .
+    container_name: blinko-telegram-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BLINKO_BASE_URL=${BLINKO_BASE_URL}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - DATABASE_PATH=/app/data/bot_data.db
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - .env
+    networks:
+      - blinko-net
+
+networks:
+  blinko-net:
+    driver: bridge
