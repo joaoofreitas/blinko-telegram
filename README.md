@@ -2,6 +2,10 @@
 
 A minimal Telegram bot for sending notes to your Blinko server.
 
+> **Heads up:** Minor fix in progress. Everything else should work as expected.
+
+
+
 ## Quick Start with Docker Compose
 
 1. **Clone and configure**:
